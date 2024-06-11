@@ -78,14 +78,14 @@
 <br>Logging back in the VM When logging back in, the first notice is the mouse won’t be lagging and the screen is able to be resize with the resolution being auto adjusted. This is what the guest addition purpose is as it improves usability of virtual machines.<br>
   
 
-<img src="https://i.imgur.com/eHYliig.jpeg" alt="Home Lab Running Active Directory"/>
+<img src="https://i.imgur.com/5HNNUOD.jpeg" alt="Home Lab Running Active Directory"/>
 
 <p align="center">
 3. Setting up IP addressing. <br/>
 <br> Just like how I explained in my overview, I will have two network interface controllers. One dedicated to the internet and the other thats going to be used for my internal network. For the internal NIC, I will have to setup manually. I will first rename the NICS according to their purposes. <br>
   
 
-<img src="https://i.imgur.com/N8xl2h3.jpeg" alt="Home Lab Running Active Directory"/>
+<img src="https://i.imgur.com/eHYliig.jpeg" alt="Home Lab Running Active Directory"/>
 
 <p align="center">
 4. Setting IP address for internal network. <br/>
