@@ -384,7 +384,7 @@ For “Enabled $true” simply means the user account is goint to be enabled<br>
 <img src="https://i.imgur.com/5llmC4a.jpeg"/>
 
 <p align="center">
-11.3 Ping.<br/>
+11.4 Ping.<br/>
 <br>I pinged Google just test if my DNS server is working which it is as Google resolved. This means I can ping to the internet giving me assurance that my whole network infrastructure is working. I have connetivity to the default gateway (Domain Controller) and then from the domain controller it is forwarding it out to the internet and the ping comes back to my VM as an echo reply.<br>
 
 
@@ -394,7 +394,7 @@ For “Enabled $true” simply means the user account is goint to be enabled<br>
 
 <img src="https://i.imgur.com/GUPrJ2c.jpeg"/>
 <p align="center">
-11.3. Rename this PC(Advanced).<br/>
+11.5. Rename this PC(Advanced).<br/>
 <br> I’ve renamed the PC to CLIENT1 which is accorded to my network architecture and I’ve also joined the domain that i’ve created (mydomain.com). I used my user login for the DC to join mydomain.com. I could’ve also used the admin login too it doesn’t really matter which one being used.
 <br>
 
@@ -425,7 +425,7 @@ For “Enabled $true” simply means the user account is goint to be enabled<br>
 
   
 
-<img src="blob:https://imgur.com/232206cd-68d2-480f-904a-fdb3e50a4cea"/>
+<img src="https://i.imgur.com/FZOoryZ.jpeg"/>
 
 <p align="center">
 13. Logging to domain with the client computer.<br/>
