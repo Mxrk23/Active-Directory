@@ -414,7 +414,7 @@ For “Enabled $true” simply means the user account is goint to be enabled<br>
 
   
 
-<img src="https://i.imgur.com/HXaWPfL.jpeg"/>
+<img src="https://i.imgur.com/9dI6NM8.jpeg"/>
 <p align="center">
 12.1. AD Users and Compliance.<br/>
 <br>  Going back to my AD, I can see that after joining my CLIENT computer to the domain, the CLIENT computer can be found in my Active directory meaning that the computer is in the domain. If I were to delete the CLIENT computer, I wouldn’t be able to log back in with the accounts I’ve created
@@ -425,7 +425,7 @@ For “Enabled $true” simply means the user account is goint to be enabled<br>
 
   
 
-<img src="https://i.imgur.com/9dI6NM8.jpeg"/>
+<img src="blob:https://imgur.com/232206cd-68d2-480f-904a-fdb3e50a4cea"/>
 
 <p align="center">
 13. Logging to domain with the client computer.<br/>
