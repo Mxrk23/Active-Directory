@@ -6,19 +6,19 @@
 
 - Download Oracle Virtual Box. This will be used to run my virtual machines
   
-- Download Windows 10 ISO and Server 2019 ISO. This will be used to install the two operating systems on two separate virtual machines
+- Download Windows 10 ISO and Server 2019 ISO - This will be used to install the two operating systems on two separate virtual machines
   
-- Create the first virtual machine which will be a domain controller. Once everything is downaloded, I will create the first VM which will be the domain controller and It will house an active directory. This will have two network adapters. One will connect to the outside internet, the other will connect to the virtualbox private network which the clients will connect to.
+- Create the first virtual machine which will be a domain controller - Once everything is downaloded, I will create the first VM which will be the domain controller and It will house an active directory. This will have two network adapters. One will connect to the outside internet, the other will connect to the virtualbox private network which the clients will connect to.
   
-- Assign IP addressing for the internal network. I will Install server 2019 ISO once the virtual machine is created and I will assign IP addressing for the internal network. The external network will automatically get IP addressing from my home network.
+- Assign IP addressing for the internal network - I will Install server 2019 ISO once the virtual machine is created and I will assign IP addressing for the internal network. The external network will automatically get IP addressing from my home network.
   
-- Name the server. Once I have IP addressing setup, I'm going to install active directory and create my domain. I will then configure my NAT and routing so the clients in the private network can reach the internet from the domain controller.
+- Name the server - Once I have IP addressing setup, I'm going to install active directory and create my domain. I will then configure my NAT and routing so the clients in the private network can reach the internet from the domain controller.
   
-- Setting up DHCP. I will then setup a DHCP on the domain controller so when I create my Windows 10 machine it can automatically  get an IP address. The main purpose of DHCP is to allow computers on a network to automatically get their IP addresses.
+- Setting up DHCP - I will then setup a DHCP on the domain controller so when I create my Windows 10 machine it can automatically  get an IP address. The main purpose of DHCP is to allow computers on a network to automatically get their IP addresses.
   
-- Running Powershell Script. The last thing I will do on the domain controller is to run a powershell script that will automatically create a 1000s users on active directory.
+- Running Powershell Script - The last thing I will do on the domain controller is to run a powershell script that will automatically create a 1000s users on active directory.
   
-- Installing Windows 10. After creating the users, I will create another virtual machine and install windows 10 which will be connected to the private virtualbox network. I'm going to name this machine client1 and join it to the domain and I will login with a domain account.  
+- Installing Windows 10 - After creating the users, I will create another virtual machine and install windows 10 which will be connected to the private virtualbox network. I'm going to name this machine client1 and join it to the domain and I will login with a domain account.  
 
 <h2>Tools and Utilities Used</h2>
 
@@ -46,21 +46,21 @@
 
 <p align="center">
 1. Setting up VM. <br/>
-<br>Once I’ve downloaded VirtualBox Windows 10 ISO and Server 2019 ISO, I’ve created my first VM on virtualbox which will be the domain controller. I’ve configured the VM with 2GB of RAM and changed the shared clipboard and Drag’n’Drop stetting to bidrectional. This would allow me to copy, paste and drag filed between my desktop and virtual machine <br>
+<br>Once I’ve downloaded VirtualBox Windows 10 ISO and Server 2019 ISO, I’ve created my first VM on virtualbox which will be the domain controller. I’ve configured the VM with 2GB of RAM and changed the shared clipboard and Drag’n’Drop stetting to bidrectional. This would allow me to copy, paste and drag files between my desktop and virtual machine <br>
   
 
 <img src="https://i.imgur.com/1Ups6Ys.jpeg" alt="Home Lab Running Active Directory"/>
 
 <p align="center">
 1.1. Creating NICs. <br/>
-<br> Because im configuring a domain controller, I will need two Network Adapters. One connected to the internet which will be running NAT and other dedicated to the internal vmware network. The first adapter is already preconfigured.<br>
+<br> Because im configuring a domain controller, I will need two Network Adapters. One connected to the internet which will be running NAT and the other dedicated to the internal vmware network. The first adapter is already preconfigured.<br>
   
 
 <img src="https://i.imgur.com/DsKfqNU.jpeg" alt="Home Lab Running Active Directory"/>
 
 <p align="center">
 1.2 Server 2019 ISO. <br/>
-<br> 1.2. Once I’ve configured the DC Virtual Machine settings, I’ve go it up and running using server 2019 ISO. I will use basic credentials for my administration access.<br>
+<br> 1.2. Once I’ve configured the DC Virtual Machine settings, I’ve launched it using server 2019 ISO. I will use basic credentials for my administration access.<br>
   
 
 <img src="https://i.imgur.com/L6JLQxQ.jpeg" alt="Home Lab Running Active Directory"/>
@@ -75,7 +75,7 @@
 
 <p align="center">
 2.1 Guest addition usability adjustment. <br/>
-<br>Logging back in the VM When logging back in, the first notice is the mouse won’t be lagging and the screen is able to be resize with the resolution being auto adjusted. This is what the guest addition purpose is as it improves usability of virtual machines.<br>
+<br>When logging back in, My first notice is the mouse stopped lagging and the screen is able to  resize with the resolution being auto adjusted. This is what the guest addition purpose is as it improves usability of virtual machines.<br>
   
 
 <img src="https://i.imgur.com/5HNNUOD.jpeg" alt="Home Lab Running Active Directory"/>
@@ -89,7 +89,7 @@
 
 <p align="center">
 4. Setting IP address for internal network. <br/>
-<br>I’ve assigned an internal IP address without using a default gateway. This is because the domain controller itself is going to serve as the default gateaway as it has two NICs, one on the internet and one internal. For the DNS server, when I install active directory it will automatically install DNS. Therefore, this server will actually use itself as the DNS server. I used the loopback address 127.0.0.1 which refers to itself. This essentially means that whenever a computer pings the loopback address it just pings itself automatically.<br>
+<br>I’ve assigned an internal IP address without using a default gateway. This is because the domain controller itself is going to serve as the default gateaway as it has two NICs, one on the internet and one internal. For the DNS server, when I install active directory it will automatically install DNS. Therefore, this server will actually use itself as the DNS server. I used the loopback address 127.0.0.1 which essentially means that whenever a computer pings the loopback address it just pings itself automatically.<br>
 
 
   
@@ -107,7 +107,7 @@
 
 <p align="center">
 6.Install Active Directory Domain Services. <br/>
-<br> Now that I have my NICs and configured the IP address of my internal network I will now install AD DS and create a domain.<br>
+<br> Now that I have my NICs and configured the IP address of my internal network I will now install AD DS and create a domain. This installation is done from the server manager dashboard.<br>
 
 
   
@@ -152,7 +152,7 @@
 
 <p align="center">
 7.2 Signing In as Admin. <br/>
-<br>To use the admin account I’ve signed out from the computers and use my admin credentials to login<br>
+<br>To use the admin account, I’ve signed out from the computers and use my admin credentials to login<br>
 
 
   
@@ -161,7 +161,7 @@
 
 <p align="center">
 8. Installing RAS/NAT. <br/>
-<br>My next step is to install Network Access Translation/ Remote Access server. The purpose of this is its going to allow my windows 10 client (after I create windows 10) to have access to the internet through the domain controller whilst being in a virtual private network. To do this, on the server manager dashboard: Roles and features>server roles>remote access>roles services>routing>install.<br>
+<br>My next step is to install Network Access Translation/ Remote Access server. The purpose of this is its going to allow my windows 10 client (after I create windows 10 on a seperate vm) to have access to the internet through the domain controller whilst being in a virtual private network. To do this on the server manager dashboard I went from Roles and features>server roles>remote access>roles services>routing>install.<br>
 
 
   
@@ -188,7 +188,7 @@
 <img src="https://i.imgur.com/efVtNbj.jpeg"/>
 
 <p align="center">
-8.2 Windows 10 Client <br/>
+8.3 Windows 10 Client <br/>
 <br>I have now completed configuring RAS and NAT which means when I have windows 10 clients they will be able to gain access to the internet after I setup the DHCP server on the domain controller. <br>
 
 
@@ -262,7 +262,7 @@
 
 <p align="center">
 10.2. Names.<br/>
-<br>I’ve opened the names file which has a bunch of names that was made through a name generator. At the top of the list I placed my own name. Im going to use this file to programatically create all of these users and for myself.<br>
+<br>I’ve opened the names file which has a bunch of names that was made through a name generator. At the top of the list I placed my own name. Im going to use this file to programatically with powershell create all of these.<br>
 
 
 
@@ -284,7 +284,7 @@
 
 
 <p align="center">
-10.4 Explaining Script. <br/>
+10.4 Explaining The Script. <br/>
 <br>Line 2-3 are variables I will be using. Line 2 contains the password that all of the user accounts will be using which is “Password1”
 
 Line 3: Get-content .\names.txt is a script to get all the names from the txt file pasting it in the USER_FIRST_LAST_LIST array
@@ -318,7 +318,7 @@ For “Enabled $true” simply means the user account is goint to be enabled<br>
 
 <p align="center">
 10.5. Directory.  <br/>
-<br>Before running it I would need to go to the directory where the script is located just for it to work and pull in the names.txt<br>
+<br>Before running it, I would need to go to the directory where the script is located just for it to work and pull in the names.txt<br>
 
 
 
@@ -340,7 +340,7 @@ For “Enabled $true” simply means the user account is goint to be enabled<br>
 
 <p align="center">
 11. Windows 10 Client.   <br/>
-<br>Now that I have my NICs, Domain, NAT and DHCP setup my last task is to create a windows 10 virtual machine in virtualbox. This will use an internal NIC which should give it’s IP address from the DHCP server that has already been configured.<br>
+<br>Now that I have my NICs, Domain, NAT and DHCP setup my last task is to create a windows 10 virtual machine in virtualbox. This will use an internal NIC which should get it’s IP address from the DHCP server that has already been configured.<br>
 
 
 
@@ -352,7 +352,7 @@ For “Enabled $true” simply means the user account is goint to be enabled<br>
 
 <p align="center">
 11.1 Windows10 VM.   <br/>
-<br>The main configuration I’ve done for this VM is I used the internal network network adapter. This is because I can emulate a corporate network and use the domain controller to get a DHCP address.<br>
+<br>The main configuration I’ve done for this VM is I used the internal network network adapter. This is because I will use the domain controller to get a DHCP address. Doing this also emulates a corporate network.<br>
 
 
 
@@ -374,7 +374,7 @@ For “Enabled $true” simply means the user account is goint to be enabled<br>
 
 <p align="center">
 11.3 Checking internet and IP.<br/>
-<br>First thing I did once I had my Windows 10 setup is to check if the internet and the IP address is working which it does as the right IP is displayed alongside the created domain.<br>
+<br>First thing I did once I had my Windows 10 setup is to check if the internet and the IP address is working which it does as the right IP is displayed alongside the created domain meaning that my DHCP is working.<br>
 
 
 
@@ -417,7 +417,7 @@ For “Enabled $true” simply means the user account is goint to be enabled<br>
 <img src="https://i.imgur.com/HXaWPfL.jpeg"/>
 <p align="center">
 12.1. AD Users and Compliance.<br/>
-<br>  Going back to my AD, I can see that after joining my CLIENT computer to the domain, the CLIENT computer can be found in my Active directory meaning that the computer is in the domain. If were to delete the CLIENT computer, I wouldn’t be able to log back in with the accounts I’ve created
+<br>  Going back to my AD, I can see that after joining my CLIENT computer to the domain, the CLIENT computer can be found in my Active directory meaning that the computer is in the domain. If I were to delete the CLIENT computer, I wouldn’t be able to log back in with the accounts I’ve created
 <br>
 
 
@@ -429,7 +429,7 @@ For “Enabled $true” simply means the user account is goint to be enabled<br>
 
 <p align="center">
 13. Logging to domain with the client computer.<br/>
-<br>I’ve Logged back in on the domain but with the client computer using the username and password created through the powershell script. For this example I just used my name but I can use all the usernames created with the same password “Password1”(as I set the password in the powershell script the same for each username). When I logged back in I’ve ran a whoami command which given me information that I am a member of mydomain as well as my username. 
+<br>I’ve Logged back in on the domain but with the client computer using the username and password created through the powershell script. For this example I just used my name but I can use all the usernames created with the same password “Password1”(as I set the password in the powershell script the same for each username). When I logged back in I’ve ran a whoami command which has given me information that I am a member of mydomain.com as well and what my username is. 
 <br>
 
 
@@ -441,7 +441,7 @@ For “Enabled $true” simply means the user account is goint to be enabled<br>
 
 <p align="center">
 14.Conclusion.<br/>
-<br>Looking back to my network architecure, I’ve created a mini corporate network essentially. With the account process, it almost simulates the onboarding process when someone gets hired into a new job role. For example, hired persons name would enter a batch file and the next day the batch file script ran and created the new hiree account which can be logged in with the corporate credentials as its already in the domain.  
+<br>Looking back to my network architecture, I’ve created a mini corporate network essentially. With the account process, it almost simulates the onboarding process when someone gets hired into a new job role. For example, hired persons name would enter a batch file and the next day the batch file script ran and created the new hiree account which can be logged in with the corporate credentials as its already in the domain.  
 <br>
 
 
