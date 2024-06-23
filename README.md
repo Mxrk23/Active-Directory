@@ -205,14 +205,8 @@
 
 <img src="https://i.imgur.com/nlG3uYC.jpeg"/>
 
-<p align="center">
-9.1 Configuring DHCP. <br/>
-<br>For configuring my DHCP, Im going to create a scope that will give IP address from a range of 172.16.0.100-200 with a subnet mask of 255.255.255.0.<br>
 
 
-  
-
-<img src="https://i.imgur.com/nlG3uYC.jpeg"/>
 
 
 <p align="center">
